@@ -1,8 +1,8 @@
 const allowedCors = [
   'https://praktikum.tk',
   'http://praktikum.tk',
-  'http://https://danitep15front.nomoredomainsmonster.ru/',
-  'https://https://danitep15front.nomoredomainsmonster.ru/',
+  'http://danitep15front.nomoredomainsmonster.ru/',
+  'https://danitep15front.nomoredomainsmonster.ru/',
   'localhost:3000',
   'http://localhost:3000',
   'https://localhost:3000',
