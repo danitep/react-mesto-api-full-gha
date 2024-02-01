@@ -24,6 +24,7 @@ const allowedCors = {
     'https://danitep15front.nomoredomainsmonster.ru',
     'http://danitep15front.nomoredomainsmonster.ru',
     'http://localhost:3000',
+    'http://localhost:3001',
   ],
 };
 

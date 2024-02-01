@@ -155,7 +155,7 @@ function App() {
   function handleUserSignUp(email, password){
     authApi.userSignUp(email, password)
     .then((userData)=>{
-      setEmail(userData.data.email);
+      setEmail(userData.email);
       setIsLoginCorrect(true);
       navigate('/sign-in', {replace: true});
     })
@@ -187,7 +187,7 @@ function App() {
     const jwt = localStorage.getItem('token');
     authApi.userAuthorization(jwt)
     .then((res)=>{
-      setEmail(res.data.email);
+      setEmail(res.email);
       setLoggedIn(true);
       navigate('/', {replace: true});
     })
