@@ -40,6 +40,7 @@ function App() {
     if(localStorage.getItem('token')){
       handleUserAuthorization();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   const navigate = useNavigate()
