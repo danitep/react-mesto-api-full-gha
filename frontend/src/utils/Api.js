@@ -118,7 +118,7 @@ class Api {
 
 const api = new Api({
   //baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-75',
-  baseUrl: 'http://api.danitep15front.nomoredomainsmonster.ru/',
+  baseUrl: 'http://api.danitep15front.nomoredomainsmonster.ru',
   headers: {
     authorization: '6c4e8e15-fb16-4272-8358-6586683c02aa',
     'Content-Type': 'application/json'

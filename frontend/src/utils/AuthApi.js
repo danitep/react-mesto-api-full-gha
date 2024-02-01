@@ -57,7 +57,7 @@ class AuthApi {
   }
   
   const authApi = new AuthApi({
-    baseUrl: 'https://auth.nomoreparties.co',
+    baseUrl: 'http://api.danitep15front.nomoredomainsmonster.ru',
     headers: {
       'Content-Type': 'application/json'
     }
