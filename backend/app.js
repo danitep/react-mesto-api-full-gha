@@ -6,6 +6,7 @@ const { errors } = require('celebrate');
 const helmet = require('helmet');
 const NotFoundError = require('./errors/not-found-err');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('./middlewares/cors');
 
 const {
   PORT = 3000,
@@ -17,8 +18,9 @@ const {
 const auth = require('./middlewares/auth');
 
 const app = express();
-app.use(helmet());
 
+app.use(helmet());
+app.use(cors);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
