@@ -19,9 +19,17 @@ const auth = require('./middlewares/auth');
 
 const app = express();
 
+const allowedCors = {
+  origin: [
+    'https://danitep15front.nomoredomainsmonster.ru',
+    'http://danitep15front.nomoredomainsmonster.ru',
+    'http://localhost:3000',
+  ],
+};
+
+app.use(cors(allowedCors));
 app.use(helmet());
 
-app.options('*', cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
