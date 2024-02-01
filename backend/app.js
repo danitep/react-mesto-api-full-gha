@@ -19,9 +19,9 @@ const auth = require('./middlewares/auth');
 
 const app = express();
 
-app.use(cors());
 app.use(helmet());
 
+app.options('*', cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
