@@ -148,12 +148,9 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      let jwtSecretWord = '';
-      if (process.env.NODE_ENV !== 'production') {
-        jwtSecretWord = 'not-secret-key';
-      } else {
-        jwtSecretWord = process.env.JWT_SECRET;
-      }
+      const jwtSecretWord = process.env.NODE_ENV !== 'production'
+        ? 'not-secret-key'
+        : process.env.JWT_SECRET;
       const token = jwt.sign(
         { _id: user._id },
         jwtSecretWord,

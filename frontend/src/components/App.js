@@ -25,27 +25,6 @@ function App() {
   const [cards, setCards] = React.useState([]);
   const [email, setEmail] = React.useState('')
 
-  React.useEffect(() => {
-    api.getInitialData()
-    .then(([resProfile, resCards])=>{
-      setCurrentUser(resProfile);
-      setCards(resCards);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }, []);
-  
-  React.useEffect(()=>{
-    if(localStorage.getItem('token')){
-      handleUserAuthorization();
-    }
- 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-  
-  const navigate = useNavigate()
-
   //Для открытия попапов
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState(false);
@@ -62,6 +41,29 @@ function App() {
   //Для работы с карточками
   const [selectedCard, setSelectedCard] = React.useState({});
   const [cardToRemove, setCardToRemove] = React.useState({});
+
+  React.useEffect(() => {
+    api.getInitialData()
+    .then(([resProfile, resCards])=>{
+      setCurrentUser(resProfile);
+      setCards(resCards);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }, [loggedIn]);
+  
+  React.useEffect(()=>{
+    if(localStorage.getItem('token')){
+      handleUserAuthorization();
+    }
+ 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
+  const navigate = useNavigate()
+
+
   
   //Вспомогательные функции
   function handleCardClick(card){

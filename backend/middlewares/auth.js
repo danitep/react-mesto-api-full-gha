@@ -12,11 +12,10 @@ module.exports = (req, res, next) => {
   const token = authorization.replace('Bearer ', '');
   let payload;
   try {
-    if (process.env.NODE_ENV !== 'production') {
-      payload = jwt.verify(token, 'not-secret-key');
-    } else {
-      payload = jwt.verify(token, process.env.JWT_SECRET);
-    }
+    const jwtSecretWord = process.env.NODE_ENV !== 'production'
+      ? 'not-secret-key'
+      : process.env.JWT_SECRET;
+    payload = jwt.verify(token, jwtSecretWord);
   } catch (err) {
     throw new UnautorizedError('Неверный токен');
   }
