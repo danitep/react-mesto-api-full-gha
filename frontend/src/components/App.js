@@ -40,6 +40,7 @@ function App() {
     if(localStorage.getItem('token')){
       handleUserAuthorization();
     }
+ 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
@@ -189,6 +190,7 @@ function App() {
     authApi.userAuthorization(jwt)
     .then((res)=>{
       setEmail(res.email);
+      setCurrentUser(res);
       setLoggedIn(true);
       navigate('/', {replace: true});
     })
