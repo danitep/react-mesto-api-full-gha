@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 178.154.207.127
 
-Frontend https://...
+Frontend https://danitep15front.nomoredomainsmonster.ru/
 
-Backend https://...
+Backend https://api.danitep15front.nomoredomainsmonster.ru/

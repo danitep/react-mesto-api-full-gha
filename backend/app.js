@@ -41,6 +41,12 @@ app.use(requestLogger);
 const login = require('./routes/signin');
 const createUser = require('./routes/signup');
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use('/signin', login);
 app.use('/signup', createUser);
 
