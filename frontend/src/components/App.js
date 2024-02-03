@@ -174,6 +174,7 @@ function App() {
   function handleUserSignIn(email, password){
     authApi.userSignIn(email, password)
     .then((data)=>{
+      setEmail(email);
       setLoggedIn(true)
       setIsLoginCorrect(true);
       localStorage.setItem('token', data.token);
